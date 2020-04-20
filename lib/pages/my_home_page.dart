@@ -6,7 +6,7 @@ class MyHomePage extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(title: Text("分支呀"),),
+      appBar: AppBar(title: Text("分支页面"),),
       body: Center(child: Text("分支呀"),),
     );
   }

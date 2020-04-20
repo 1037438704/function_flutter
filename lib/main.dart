@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '用于添加功能收集以及使用',
+      title: '二维码扫描',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
