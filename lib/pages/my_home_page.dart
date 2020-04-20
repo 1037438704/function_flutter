@@ -6,13 +6,8 @@ class MyHomePage extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(title: Text("主页面"),),
-      body: Center(child: Text("Home页面"),),
+      appBar: AppBar(title: Text("分支呀"),),
+      body: Center(child: Text("分支呀"),),
     );
   }
-
 }
-
-
-
-
