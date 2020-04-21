@@ -15,3 +15,8 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+///二维码流程
+///1.先申请权限
+
+
+
