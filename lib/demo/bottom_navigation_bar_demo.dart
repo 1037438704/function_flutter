@@ -17,7 +17,6 @@ class _BottomNavigationBarDemoState extends State<BottomNavigationBarDemo> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       fixedColor: Colors.black,
