@@ -31,7 +31,11 @@ class Home extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          actions: <Widget>[IconButton(icon: Icon(Icons.search))],
+          actions: <Widget>[
+            IconButton(icon: Icon(Icons.search),
+            onPressed: () => debugPrint("点击了"),
+            ),
+            ],
           title: Text("Home"),
           bottom: TabBar(
             unselectedLabelColor: Colors.black54,
