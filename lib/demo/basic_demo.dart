@@ -4,7 +4,16 @@ class BasicDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey[100],
+      decoration: BoxDecoration(
+          image: DecorationImage(
+        image: NetworkImage(
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587645314100&di=a02b8eb63e9825d7a0a8bbb69a059bd8&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_zoom%2Cw_640%2Fimages%2F20200309%2F3407b08c9ea249f9ba68fa82a3fd68f7.jpeg'),
+        alignment: Alignment.topCenter,
+//            repeat: ImageRepeat.repeatY
+        fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(Colors.indigoAccent[400].withOpacity(0.5),BlendMode.hardLight )
+          )),
+//      color: Colors.grey[100],
       child:
           Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
         Container(
@@ -18,7 +27,26 @@ class BasicDemo extends StatelessWidget {
               border: Border.all(
                   color: Colors.indigoAccent,
                   width: 3,
-                  style: BorderStyle.solid)),
+                  style: BorderStyle.solid),
+//              borderRadius: BorderRadius.circular(16),
+              shape: BoxShape.circle,
+//              gradient: RadialGradient(colors: [
+//                Color.fromRGBO(7, 102, 255, 1.0),
+//                Color.fromRGBO(3, 28, 128, 1.0),
+//              ]),
+              gradient: LinearGradient(colors: [
+                Color.fromRGBO(7, 102, 255, 1.0),
+                Color.fromRGBO(3, 28, 128, 1.0),
+              ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+              boxShadow: [
+                BoxShadow(
+                    //控制阴影的便宜量       x轴，y轴
+                    offset: Offset(5.0, 7.0),
+                    //控制阴影的颜色
+                    color: Color.fromRGBO(16, 20, 188, 1.0),
+                    blurRadius: 10,
+                    spreadRadius: -9),
+              ]),
         )
       ]),
     );
