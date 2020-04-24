@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'demo/basic_demo.dart';
 import 'demo/bottom_navigation_bar_demo.dart';
 import 'demo/drawer_demo.dart';
+import 'demo/layout_demo.dart';
 import 'demo/listview_demo.dart';
 
 void main() => runApp(MyApp());
@@ -23,7 +24,6 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -32,10 +32,11 @@ class Home extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           actions: <Widget>[
-            IconButton(icon: Icon(Icons.search),
-            onPressed: () => debugPrint("点击了"),
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () => debugPrint("点击了"),
             ),
-            ],
+          ],
           title: Text("Home"),
           bottom: TabBar(
             unselectedLabelColor: Colors.black54,
@@ -50,14 +51,10 @@ class Home extends StatelessWidget {
           ),
         ),
         body: TabBarView(
-          children: <Widget>[
-            ListViewDemo(),
-            BasicDemo(),
-            Icon(Icons.directions_bike, color: Colors.black12, size: 128),
-          ],
+          children: <Widget>[ListViewDemo(), BasicDemo(), LayoutDemo()],
         ),
         drawer: DrawerDemo(),
-        bottomNavigationBar:BottomNavigationBarDemo(),
+        bottomNavigationBar: BottomNavigationBarDemo(),
       ),
     );
   }
