@@ -1,42 +1,35 @@
 import 'package:flutter/material.dart';
 
 class LayoutDemo extends StatelessWidget {
+  String aaa = " ";
+
   @override
   Widget build(BuildContext context) {
+    print(aaa.isEmpty);
+    print(aaa == null);
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              maxHeight: 200,
-              maxWidth: 200
-            ),
-            child: Container(
-              color: Colors.indigo,
-            ),
-          )
-
-
+          Text(""),
+          Text(""),
         ],
       ),
     );
   }
 }
 
-class AspectRatioDemo extends StatelessWidget{
+class AspectRatioDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-        aspectRatio: 16/9 ,
-        child: Container(
-          color: Color.fromRGBO(3, 52, 255, 1.0),
-        ),
+      aspectRatio: 16 / 9,
+      child: Container(
+        color: Color.fromRGBO(3, 52, 255, 1.0),
+      ),
     );
   }
-
 }
-
 
 class IconBadge extends StatelessWidget {
   final IconData icon;
