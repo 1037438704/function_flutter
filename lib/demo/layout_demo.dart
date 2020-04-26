@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 
 class LayoutDemo extends StatelessWidget {
   String aaa = " ";
+  List list = ["aaa", "aaa"];
 
   @override
   Widget build(BuildContext context) {
-    print(aaa.isEmpty);
-    print(aaa == null);
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -24,9 +23,7 @@ class AspectRatioDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 16 / 9,
-      child: Container(
-        color: Color.fromRGBO(3, 52, 255, 1.0),
-      ),
+      child: Container(color: Color.fromRGBO(3, 52, 255, 1.0)),
     );
   }
 }
