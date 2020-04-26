@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
 
 ///主页面
-///
-///
-/////
-
 class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -18,11 +14,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text("扫一扫"),
-        elevation: 0,
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: Text("扫一扫"), elevation: 0, centerTitle: true),
       body: Column(
         children: <Widget>[
           Text("$barcode"),
