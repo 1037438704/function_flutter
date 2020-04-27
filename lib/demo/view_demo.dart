@@ -2,19 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:functionflutter/model/post.dart';
 
 class ViewDemo extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return GridViewExtentDemo();
+    return GridViewBuilderDemo();
   }
 }
 
+class GridViewBuilderDemo extends StatelessWidget {
+  Widget _gridItemBuilder(context, index) {
+    return Image.network(posts[index].imageUrl, fit: BoxFit.fill);
+  }
 
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      padding: EdgeInsets.all(8.0),
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+//        crossAxisCount: 3,
+        maxCrossAxisExtent: 150,
+        mainAxisSpacing: 8,
+        crossAxisSpacing: 8,
+      ),
+      itemBuilder: _gridItemBuilder,
+      itemCount: posts.length,
+    );
+  }
+}
 
-
-class GridViewExtentDemo extends StatelessWidget{
-  List<Widget> _buildTitles(int length){
-    return List.generate(length, (int index){
+class GridViewExtentDemo extends StatelessWidget {
+  List<Widget> _buildTitles(int length) {
+    return List.generate(length, (int index) {
       return Container(
         color: Colors.grey[300],
         alignment: Alignment(0.0, 0.0),
@@ -25,6 +42,7 @@ class GridViewExtentDemo extends StatelessWidget{
       );
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return GridView.extent(
@@ -37,15 +55,9 @@ class GridViewExtentDemo extends StatelessWidget{
   }
 }
 
-
-
-
-
-
-
-class GridViewCountDemo extends StatelessWidget{
-  List<Widget> _buildTitles(int length){
-    return List.generate(length, (int index){
+class GridViewCountDemo extends StatelessWidget {
+  List<Widget> _buildTitles(int length) {
+    return List.generate(length, (int index) {
       return Container(
         color: Colors.grey[300],
         alignment: Alignment(0.0, 0.0),
@@ -56,6 +68,7 @@ class GridViewCountDemo extends StatelessWidget{
       );
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(
