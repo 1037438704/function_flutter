@@ -2,6 +2,42 @@ import 'package:flutter/material.dart';
 import 'package:functionflutter/model/post.dart';
 
 class ViewDemo extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return GridViewCountDemo();
+  }
+}
+
+class GridViewCountDemo extends StatelessWidget{
+  List<Widget> _buildTitles(int length){
+    return List.generate(length, (int index){
+      return Container(
+        color: Colors.grey[300],
+        alignment: Alignment(0.0, 0.0),
+        child: Text(
+          "Item$index",
+          style: TextStyle(fontSize: 18, color: Colors.grey),
+        ),
+      );
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return GridView.count(
+      crossAxisCount: 2,
+      crossAxisSpacing: 16.0,
+      mainAxisSpacing: 16.0,
+      scrollDirection: Axis.horizontal,
+      children: _buildTitles(100),
+    );
+  }
+
+
+}
+
+
+class PageViewDemoBuilder extends StatelessWidget {
   Widget _pageItemBuilder(context, index) {
     return Stack(
       children: <Widget>[
@@ -35,9 +71,6 @@ class ViewDemo extends StatelessWidget {
     );
   }
 }
-
-
-
 
 class PageViewDemo extends StatelessWidget {
   @override
