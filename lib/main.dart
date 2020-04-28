@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.yellow,
           highlightColor: Color.fromRGBO(255, 255, 255, 0.5)),
-      home: SliverDemo(),
+      home: Home(),
     );
   }
 }
@@ -57,7 +57,7 @@ class Home extends StatelessWidget {
             ListViewDemo(),
             BasicDemo(),
             LayoutDemo(),
-            ViewDemo()
+            SliverDemo()
           ],
         ),
         drawer: DrawerDemo(),
