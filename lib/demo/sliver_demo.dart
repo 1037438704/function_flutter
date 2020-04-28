@@ -4,14 +4,13 @@ import '../model/post.dart';
 class SliverDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          SliverAppBar(
-            title: Text("DONGLIANG"),
-            pinned: true,
-          ),
+//          SliverAppBar(
+//            title: Text("DONGLIANG"),
+//            pinned: true,
+//          ),
           SliverSafeArea(
             sliver: SliverPadding(
               padding: EdgeInsets.all(8),
@@ -27,17 +26,37 @@ class SliverDemo extends StatelessWidget {
 class SliverListDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return SliverList(
       delegate: SliverChildBuilderDelegate((context, index) {
-        return Stack(
-          children: <Widget>[
-            Container(
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: NetworkImage(posts[index].imageUrl))),
-            )
-          ],
+        return Padding(
+          padding: EdgeInsets.only(bottom: 32),
+          child: Material(
+            borderRadius: BorderRadius.circular(12),
+            elevation: 14,
+            shadowColor: Colors.grey.withOpacity(0.5),
+            child: Stack(
+              children: <Widget>[
+                AspectRatio(
+                  aspectRatio: 16 / 9,
+                  child:
+                      Image.network(posts[index].imageUrl, fit: BoxFit.cover),
+                ),
+                Positioned(
+                  top: 32,
+                  left: 32,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(posts[index].title,
+                          style: TextStyle(fontSize: 20, color: Colors.white)),
+                      Text(posts[index].title,
+                          style: TextStyle(fontSize: 13, color: Colors.white)),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
         );
       }, childCount: posts.length),
     );
