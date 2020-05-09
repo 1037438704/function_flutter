@@ -41,39 +41,33 @@ class SliverListDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverList(
-      delegate: SliverChildBuilderDelegate((context, index) {
-        return Padding(
-          padding: EdgeInsets.only(bottom: 32),
-          child: Material(
+        delegate: SliverChildBuilderDelegate((context, index) {
+      return Padding(
+        padding: EdgeInsets.only(bottom: 32),
+        child: Material(
             borderRadius: BorderRadius.circular(12),
             elevation: 14,
             shadowColor: Colors.grey.withOpacity(0.5),
-            child: Stack(
-              children: <Widget>[
-                AspectRatio(
+            child: Stack(children: <Widget>[
+              AspectRatio(
                   aspectRatio: 16 / 9,
                   child:
-                      Image.network(posts[index].imageUrl, fit: BoxFit.cover),
-                ),
-                Positioned(
+                      Image.network(posts[index].imageUrl, fit: BoxFit.cover)),
+              Positioned(
                   top: 32,
                   left: 32,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(posts[index].title,
-                          style: TextStyle(fontSize: 20, color: Colors.white)),
-                      Text(posts[index].title,
-                          style: TextStyle(fontSize: 13, color: Colors.white)),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
-        );
-      }, childCount: posts.length),
-    );
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(posts[index].title,
+                            style:
+                                TextStyle(fontSize: 20, color: Colors.white)),
+                        Text(posts[index].title,
+                            style: TextStyle(fontSize: 13, color: Colors.white))
+                      ]))
+            ])),
+      );
+    }, childCount: posts.length));
   }
 }
 
